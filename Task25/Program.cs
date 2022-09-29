@@ -2,15 +2,20 @@
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
 
-void DegreeOfNumber()
+int DegreeOfNumber(int number, int degree)
 {
-Console.WriteLine("Введите число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("Введите натуральную степень числа: ");
-int degree = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine(Math.Pow(number, degree));
+    int result = number;
+    for (int i = 1; i < degree; i++)
+    {
+        result = result * number;
+    }
+    return result;
 }
 
-DegreeOfNumber();
+Console.WriteLine("Введите число: ");
+int num = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите натуральную степень числа: ");
+int deg = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine();
+Console.WriteLine(num + " в " + deg +  " степени = " + DegreeOfNumber(num, deg));
